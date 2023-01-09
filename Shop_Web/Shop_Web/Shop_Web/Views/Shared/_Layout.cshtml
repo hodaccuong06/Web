@@ -1,0 +1,171 @@
+﻿
+<!DOCTYPE HTML>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="pragma" content="no-cache" />
+    <meta http-equiv="cache-control" content="max-age=604800" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <script src="~/Content/js/jquery-2.0.0.min.js" type="text/javascript"></script>
+    <script src="~/Content/js/bootstrap.bundle.min.js" type="text/javascript"></script>
+    <link href="~/Content/css/bootstrap.css" rel="stylesheet" type="text/css" />
+    <link href="fonts/fontawesome/css/all.min.css" type="text/css" rel="stylesheet">
+    <link href="~/Content/css/ui.css" rel="stylesheet" type="text/css" />
+    <link href="~/Content/css/responsive.css" rel="stylesheet" type="text/css" />
+    <script src="~/Content/js/script.js" type="text/javascript"></script>
+
+</head>
+<body>
+
+    <header class="section-header">
+        <section class="header-main border-bottom">
+            <div class="container">
+                <div class="row align-items-center">
+                    <div class="col-xl-2 col-lg-3 col-md-12">
+                        <a href="~/Home/Index" class="logo">
+                            <img src="~/Content/images/logo.jpg">
+
+                        </a>
+
+                    </div>
+                    <div class="col-xl-6 col-lg-5 col-md-6">
+                        <form action="#" class="search-header">
+                            <div class="input-group w-100">
+                                <select class="custom-select border-right" name="category_name">
+                                    <option value="">All type</option>
+                                    <option value="codex">Special</option>
+                                    <option value="comments">Only best</option>
+                                    <option value="content">Latest</option>
+                                </select>
+                                <input type="text" class="form-control" placeholder="Search">
+
+                                <div class="input-group-append">
+                                    <button class="btn btn-primary" type="submit">
+                                        <i class="fa fa-search"></i> Search
+                                    </button>
+                                </div>
+                            </div>
+                        </form> 
+                    </div> 
+
+                    <div class="col-xl-4 col-lg-4 col-md-6">
+                        <div class="widgets-wrap float-md-right">
+                            <div class="widget-header mr-3">
+                                <a href="#" class="widget-view">
+
+
+                                    @if (Session["idUser"] != null)
+                                    {
+                                        var Fullname = HttpContext.Current.Session["FullName"].ToString();
+                                        <a href="~/Profile/Index" style="color:red; font-weight:bold"> Hello @Fullname</a>
+                                        <a href="~/Admin/Product/Index" class="btn btn-warning">Trang Admin</a>
+                                        <a href="~/Home/Logout" class="btn btn-warning"> Logout</a>
+                                        <a href="#" class="">Giỏ hàng</a>
+                                    }
+                                    else
+                                    {
+
+                                        <a href="~/Home/Login"> Đăng nhập </a>
+                                        <div class="widget-header mr-3">
+                                            <a href="#" class="widget-view">
+                                                <a href="~/Home/Register"> Đăng ký </a>
+                                            </a>
+                                        </div>
+                                        <div class="widget-header mr-3">
+                                            <a href="#" class="widget-view">
+                                                <a href="~/Home/Register" class="">Giỏ hàng</a>
+                                            </a>
+                                        </div>
+
+
+
+                                    }
+
+                                </a>
+
+                            </div>
+                            
+                        </div>
+
+
+                    </div> 
+                </div> 
+            </div> 
+
+        </section> 
+
+
+
+    </header>
+
+    @RenderBody()
+
+    <footer class="section-footer bg-secondary">
+        <div class="container">
+            <section class="footer-top padding-y-lg text-white">
+                <div class="row">
+                    <aside class="col-md col-6">
+                        <h6 class="title">Brands</h6>
+                        <ul class="list-unstyled">
+                            <li> <a href="#">ACER</a></li>
+                            <li> <a href="#">ASUS</a></li>
+                            <li> <a href="#">Dell</a></li>
+                            <li> <a href="#">GIGABYTE</a></li>
+                            <li> <a href="#">MSI</a></li>
+                        </ul>
+                    </aside>
+                    <aside class="col-md col-6">
+                        <h6 class="title">Company</h6>
+                        <ul class="list-unstyled">
+                            <li> <a href="#">About us</a></li>
+                            <li> <a href="#">Career</a></li>
+                            <li> <a href="#">Find a store</a></li>
+                            <li> <a href="#">Rules and terms</a></li>
+                            <li> <a href="#">Sitemap</a></li>
+                        </ul>
+                    </aside>
+                    <aside class="col-md col-6">
+                        <h6 class="title">Help</h6>
+                        <ul class="list-unstyled">
+                            <li> <a href="#">Contact us</a></li>
+                            <li> <a href="#">Money refund</a></li>
+                            <li> <a href="#">Order status</a></li>
+                            <li> <a href="#">Shipping info</a></li>
+                            <li> <a href="#">Open dispute</a></li>
+                        </ul>
+                    </aside>
+                    <aside class="col-md col-6">
+                        <h6 class="title">Account</h6>
+                        <ul class="list-unstyled">
+                            <li> <a href="#"> User Login </a></li>
+                            <li> <a href="#"> User register </a></li>
+                            <li> <a href="#"> Account Setting </a></li>
+                            <li> <a href="#"> My Orders </a></li>
+                        </ul>
+                    </aside>
+                    <aside class="col-md">
+                        <h6 class="title">Social</h6>
+                        <ul class="list-unstyled">
+                            <li><a href="#"> <i class="fab fa-facebook"></i> Facebook </a></li>
+                            <li><a href="#"> <i class="fab fa-twitter"></i> Twitter </a></li>
+                            <li><a href="#"> <i class="fab fa-instagram"></i> Instagram </a></li>
+                            <li><a href="#"> <i class="fab fa-youtube"></i> Youtube </a></li>
+                        </ul>
+                    </aside>
+                </div> 
+            </section>	
+
+            <section class="footer-bottom text-center">
+
+                <p class="text-white">Privacy Policy - Terms of Use - User Information Legal Enquiry Guide</p>
+                <p class="text-muted"> &copy 2019 Company name, All rights reserved </p>
+                <br>
+            </section>
+        </div>
+    </footer>
+
+
+
+
+</body>
+</html>

@@ -1,0 +1,163 @@
+﻿@model Shop_Web.Database.Product
+
+@{
+    ViewBag.Title = "Delete";
+    Layout = "~/Areas/Admin/Views/Shared/_Layout.cshtml";
+}
+
+<div class="quanly" style="text-align: center; font-size: 40px ; font-family:Cambria, Cochin, Georgia, Times, Times New Roman, serif'">Xóa sản phẩm</div>
+<hr />
+
+<div class="quanly" style="margin-left:20px;color:red; font-size: 32px ; font-family:Cambria, Cochin, Georgia, Times, Times New Roman, serif'">Are you sure you want to delete this?</div>
+<hr />
+<div class="delete" style="margin-left:50px">
+
+    <div class="col-md-12">
+        <div class="row">
+
+
+
+            <div class="col-md-10">
+                <dl class="table table-bordered">
+                    <div class="edits">
+                        <dt>
+                            @Html.DisplayNameFor(model => model.Name)
+                        </dt>
+
+                        <dd>
+                            @Html.DisplayFor(model => model.Name)
+                        </dd>
+                        <hr />
+                        <dt>
+                            @Html.DisplayNameFor(model => model.Avartar)
+                        </dt>
+
+                        <dd>
+                            @Html.DisplayFor(model => model.Avartar)
+                        </dd>
+                        <hr />
+                        <dt>
+                            @Html.DisplayNameFor(model => model.CategoryId)
+                        </dt>
+
+                        <dd>
+                            @Html.DisplayFor(model => model.CategoryId)
+                        </dd>
+                        <hr />
+                        <dt>
+                            @Html.DisplayNameFor(model => model.ShortDes)
+                        </dt>
+
+                        <dd>
+                            @Html.DisplayFor(model => model.ShortDes)
+                        </dd>
+                        <hr />
+                        <dt>
+                            @Html.DisplayNameFor(model => model.FullDescription)
+                        </dt>
+
+                        <dd>
+                            @Html.DisplayFor(model => model.FullDescription)
+                        </dd>
+                        <hr />
+                        <dt>
+                            @Html.DisplayNameFor(model => model.Price)
+                        </dt>
+
+                        <dd>
+                            @Html.DisplayFor(model => model.Price)
+                        </dd>
+                        <hr />
+                        <dt>
+                            @Html.DisplayNameFor(model => model.PriceDiscount)
+                        </dt>
+
+                        <dd>
+                            @Html.DisplayFor(model => model.PriceDiscount)
+                        </dd>
+                        <hr />
+                        <dt>
+                            @Html.DisplayNameFor(model => model.TypeId)
+                        </dt>
+
+                        <dd>
+                            @Html.DisplayFor(model => model.TypeId)
+                        </dd>
+                        <hr />
+                        <dt>
+                            @Html.DisplayNameFor(model => model.Slug)
+                        </dt>
+
+                        <dd>
+                            @Html.DisplayFor(model => model.Slug)
+                        </dd>
+                        <hr />
+                        <dt>
+                            @Html.DisplayNameFor(model => model.BrandId)
+                        </dt>
+
+                        <dd>
+                            @Html.DisplayFor(model => model.BrandId)
+                        </dd>
+                        <hr />
+                        <dt>
+                            @Html.DisplayNameFor(model => model.Deleted)
+                        </dt>
+
+                        <dd>
+                            @Html.DisplayFor(model => model.Deleted)
+                        </dd>
+                        <hr />
+                        <dt>
+                            @Html.DisplayNameFor(model => model.ShowOnHomePage)
+                        </dt>
+
+                        <dd>
+                            @Html.DisplayFor(model => model.ShowOnHomePage)
+                        </dd>
+                        <hr />
+                        <dt>
+                            @Html.DisplayNameFor(model => model.DisplayOrder)
+                        </dt>
+
+                        <dd>
+                            @Html.DisplayFor(model => model.DisplayOrder)
+                        </dd>
+                        <hr />
+                        <dt>
+                            @Html.DisplayNameFor(model => model.CreatedOnUtc)
+                        </dt>
+
+                        <dd>
+                            @Html.DisplayFor(model => model.CreatedOnUtc)
+                        </dd>
+                        <hr />
+                        <dt>
+                            @Html.DisplayNameFor(model => model.UpdateOnUtc)
+                        </dt>
+
+                        <dd>
+                            @Html.DisplayFor(model => model.UpdateOnUtc)
+                        </dd>
+
+                    </div>
+                </dl>
+            </div>
+            <p>
+                @using (Html.BeginForm("Delete", "Product", FormMethod.Post, new { enctype = "multipart/form-data" }))
+                {
+                    <div class="col-md-offset-5 col-md-10">
+                        <button type="button" class="btn btn-outline-primary" data-mdb-ripple-color="dark">@Html.ActionLink("Back to List", "Index")</button>
+                        <input type="submit" value="Delete" class="btn btn-outline-success" />
+
+                    </div>
+                }
+                </p>
+        </div>
+    </div>
+</div>
+<style>
+    .edits{
+        margin-left:50px
+    }
+</style>

@@ -1,0 +1,120 @@
+﻿@model Shop_Web.Database.Product
+
+@{
+    ViewBag.Title = "Details";
+    Layout = "~/Areas/Admin/Views/Shared/_Layout.cshtml";
+}
+
+<div class="quanly" style="text-align: center; font-size: 40px ; font-family:Cambria, Cochin, Georgia, Times, Times New Roman, serif">Xem sản phẩm</div>
+<hr />
+<div class="edit">
+
+
+    <div class="col-md-12">
+        <div class="row">
+
+
+
+            <div class="col-md-10">
+                <dl class="table table-bordered">
+                    <div class="edits">
+                        <dt>
+                            @Html.DisplayNameFor(model => model.Name):
+                        </dt>
+                        <dd>
+
+                            @Html.DisplayFor(model => model.Name)
+                        </dd>
+                        <hr />
+                        <dt>
+                            @Html.DisplayNameFor(model => model.Avartar)
+                        </dt>
+
+                        <dd>
+                            <img src="~/Content/images/items/@Url.Content(Model.Avartar)" style="height:200px;width:200px; margin:10px;"
+                        </dd>
+                        <hr />
+                        <dt>
+                            @Html.DisplayNameFor(model => model.CategoryId)
+                        </dt>
+
+                        <dd>
+                            @Html.DisplayFor(model => model.CategoryId)
+                        </dd>
+                        <hr />
+                        <dt>
+                            @Html.DisplayNameFor(model => model.ShortDes)
+                        </dt>
+
+                        <dd>
+                            @Html.DisplayFor(model => model.ShortDes)
+                        </dd>
+                        <hr />
+                        <dt>
+                            @Html.DisplayNameFor(model => model.FullDescription)
+                        </dt>
+
+                        <dd>
+                            @Html.DisplayFor(model => model.FullDescription)
+                        </dd>
+                        <hr />
+                        <dt>
+                            @Html.DisplayNameFor(model => model.Price)
+                        </dt>
+
+                        <dd>
+                            @Html.DisplayFor(model => model.Price)
+                        </dd>
+                        <hr />
+                        <dt>
+                            @Html.DisplayNameFor(model => model.PriceDiscount)
+                        </dt>
+
+                        <dd>
+                            @Html.DisplayFor(model => model.PriceDiscount)
+                        </dd>
+                        <hr />
+                        <dt>
+                            @Html.DisplayNameFor(model => model.TypeId)
+                        </dt>
+
+                        <dd>
+                            @Html.DisplayFor(model => model.TypeId)
+                        </dd>
+                        <hr />
+                        <dt>
+                            @Html.DisplayNameFor(model => model.Slug)
+                        </dt>
+
+                        <dd>
+                            @Html.DisplayFor(model => model.Slug)
+                        </dd>
+                        <hr />
+                        <dt>
+                            @Html.DisplayNameFor(model => model.BrandId)
+                        </dt>
+
+                        <dd>
+                            @Html.DisplayFor(model => model.BrandId)
+                        </dd>
+                    </div>
+                </dl>
+            </div>
+            <p>
+                <button type="button" class="btn btn-outline-success">@Html.ActionLink("Edit", "Edit", new { id = Model.Id })</button>
+                <br />
+                <br />
+                <button type="button" class="btn btn-outline-primary" data-mdb-ripple-color="dark">@Html.ActionLink("Back to List", "Index")</button>
+            </p>
+        </div>
+    </div>
+</div>
+<style>
+    .edit {
+        margin-left: 50px;
+    }
+
+    .edits {
+        margin-left: 10px;
+    }
+</style>

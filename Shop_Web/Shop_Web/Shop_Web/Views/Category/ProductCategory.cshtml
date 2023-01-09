@@ -1,0 +1,272 @@
+﻿@model List<Shop_Web.Database.Product>
+@{
+    ViewBag.Title = "ProductCategory";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<section class="section-content padding-y">
+    <div class="container">
+        <div class="card mb-3">
+            <div class="card-body">
+                <ol class="breadcrumb float-left">
+                    <li class="breadcrumb-item"><a href="#">Home</a></li>
+                    <li class="breadcrumb-item"><a href="#">Category name</a></li>
+                    <li class="breadcrumb-item active">Item details</li>
+                </ol>
+            </div> 
+        </div> 
+
+
+
+        <div class="row">
+            <aside class="col-md-2">
+
+                <article class="filter-group">
+                    <h6 class="title">
+                        <a href="#" class="dropdown-toggle" data-toggle="collapse" data-target="#collapse_1">	 Product type </a>
+                    </h6>
+                    <div class="filter-content collapse show" id="collapse_1" style="">
+                        <div class="inner">
+                            <ul class="list-menu">
+                      
+                            
+                                <li><a href="#">Series  </a></li>
+                                <li><a href="#">Màu sắc </a></li>
+                                <li><a href="#">Nhu cầu </a></li>
+                                <li><a href="#">Series CPU</a></li>
+                                <li><a href="#">Chip Đồ họa rời </a></li>
+                                <li><a href="#">Dung lượng RAM </a></li>
+                                <li><a href="#">Kích Thước màn hình </a></li>
+                                <li><a href="#">Chip Đồ họa rời </a></li>
+                                <li><a href="#">Chuẩn phân giải </a></li>
+                                <li><a href="#">Màn hình cảm ứng </a></li>
+                            </ul>
+                        </div> 
+                    </div>
+                </article> 
+                <article class="filter-group">
+                    <h6 class="title">
+                        <a href="#" class="dropdown-toggle" data-toggle="collapse" data-target="#collapse_2"> Brands </a>
+                    </h6>
+                    <div class="filter-content collapse show" id="collapse_2">
+                        <div class="inner">
+                            <label class="custom-control custom-checkbox">
+                                <input type="checkbox" checked="" class="custom-control-input">
+                                <div class="custom-control-label">
+                                    Asus
+                                    <b class="badge badge-pill badge-light float-right"></b>
+                                </div>
+                            </label>
+                            <label class="custom-control custom-checkbox">
+                                <input type="checkbox" checked="" class="custom-control-input">
+                                <div class="custom-control-label">
+                                    MacBook
+                                    <b class="badge badge-pill badge-light float-right"></b>
+                                </div>
+                            </label>
+                            <label class="custom-control custom-checkbox">
+                                <input type="checkbox" checked="" class="custom-control-input">
+                                <div class="custom-control-label">
+                                    Acer
+                                    <b class="badge badge-pill badge-light float-right"></b>
+                                </div>
+                            </label>
+                            <label class="custom-control custom-checkbox">
+                                <input type="checkbox" checked="" class="custom-control-input">
+                                <div class="custom-control-label">
+                                    Dell
+                                    <b class="badge badge-pill badge-light float-right"></b>
+                                </div>
+                            </label>
+                            <label class="custom-control custom-checkbox">
+                                <input type="checkbox" class="custom-control-input">
+                                <div class="custom-control-label">
+                                    HP
+                                    <b class="badge badge-pill badge-light float-right"></b>
+                                </div>
+                            </label>
+                            <label class="custom-control custom-checkbox">
+                                <input type="checkbox" class="custom-control-input">
+                                <div class="custom-control-label">
+                                    Lenovo
+                                    <b class="badge badge-pill badge-light float-right"></b>
+                                </div>
+                            </label>
+                            <label class="custom-control custom-checkbox">
+                                <input type="checkbox" class="custom-control-input">
+                                <div class="custom-control-label">
+                                    MSI
+                                    <b class="badge badge-pill badge-light float-right"></b>
+                                </div>
+                            </label>
+                        </div> 
+                    </div>
+                </article>
+                <article class="filter-group">
+                    <h6 class="title">
+                        <a href="#" class="dropdown-toggle" data-toggle="collapse" data-target="#collapse_3"> Price range </a>
+                    </h6>
+                    <div class="filter-content collapse show" id="collapse_3">
+                        <div class="inner">
+                            <input type="range" class="custom-range" min="0" max="100" name="">
+                            <div class="form-row">
+                                <div class="form-group col-md-6">
+                                    <label>Min</label>
+                                    <input class="form-control" placeholder="$0" type="number">
+                                </div>
+                                <div class="form-group text-right col-md-6">
+                                    <label>Max</label>
+                                    <input class="form-control" placeholder="$1,0000" type="number">
+                                </div>
+                            </div>
+                            <button class="btn btn-block btn-primary">Apply</button>
+                        </div>
+                    </div>
+                </article>
+               
+               
+
+            </aside> 
+            <main class="col-md-10">
+
+
+                <header class="mb-3">
+                    <div class="form-inline">
+                        <strong class="mr-md-auto">32 Items found </strong>
+                        <select class="mr-2 form-control">
+                            <option>Latest items</option>
+                            <option>Trending</option>
+                            <option>Most Popular</option>
+                            <option>Cheapest</option>
+                        </select>
+                        <div class="btn-group">
+                            <a href="page-listing-grid.html" class="btn btn-light" data-toggle="tooltip" title="List view">
+                                <i class="fa fa-bars"></i>
+                            </a>
+                            <a href="page-listing-large.html" class="btn btn-light active" data-toggle="tooltip" title="Grid view">
+                                <i class="fa fa-th"></i>
+                            </a>
+                        </div>
+                    </div>
+                </header>
+
+                @foreach (var item in Model)
+                {
+                    <article class="card card-product-list">
+                        <div class="row no-gutters">
+                            <aside class="col-md-3">
+                                <a href="#" class="img-wrap">
+                                    <img src="~/Content/images/items/@item.Avartar">
+                                </a>
+                            </aside> 
+                            <div class="col-md-6">
+                                <div class="info-main">
+                                    <a href="#" class="h5 title"> @item.Name  </a>
+                                    <div class="rating-wrap mb-2">
+                                        <ul class="rating-stars">
+                                            <li style="width:80%" class="stars-active">
+                                                <i class="fa fa-star"></i> <i class="fa fa-star"></i>
+                                                <i class="fa fa-star"></i> <i class="fa fa-star"></i>
+                                                <i class="fa fa-star"></i>
+                                            </li>
+                                            <li>
+                                                <i class="fa fa-star"></i> <i class="fa fa-star"></i>
+                                                <i class="fa fa-star"></i> <i class="fa fa-star"></i>
+                                                <i class="fa fa-star"></i>
+                                            </li>
+                                        </ul>
+                                        <div class="label-rating">7/10</div>
+                                    </div> 
+
+                                    <p class="mb-3">
+                                        <span class="tag"> <i class="fa fa-check"></i> Verified</span>
+                                        <span class="tag"> 4 Years </span>
+                                        <span class="tag"> 60 reviews </span>
+                                        <span class="tag"> China </span>
+                                    </p>
+
+                                    <p>
+                                        @item.ShortDes
+                                    </p>
+
+                                </div> 
+                            </div> 
+                            <aside class="col-sm-3">
+                                <div class="info-aside">
+                                    <div class="price-wrap">
+                                        <span class="h5 price">@item.Price VNĐ</span>
+                                        <small class="text-muted"></small>
+                                    </div> 
+                                    <small class="text-success">Free shipping</small>
+
+                                    
+                                    <p class="mt-3">
+                                        <a href="#" class="btn btn-outline-primary"> <i class="fa fa-envelope"></i> Contact supplier </a>
+                                        <a href="#" class="btn btn-light"><i class="fa fa-heart"></i> Save </a>
+                                    </p>
+
+                                    <label class="custom-control mt-3 custom-checkbox">
+                                        <input type="checkbox" class="custom-control-input">
+                                        <div class="custom-control-label">
+                                            Add to compare
+                                        </div>
+                                    </label>
+
+                                </div> 
+                            </aside> 
+                        </div> 
+                    </article>
+                }
+                
+
+
+                <nav class="mb-4" aria-label="Page navigation sample">
+                    <ul class="pagination">
+                        <li class="page-item disabled"><a class="page-link" href="#">Previous</a></li>
+                        <li class="page-item active"><a class="page-link" href="#">1</a></li>
+                        <li class="page-item"><a class="page-link" href="#">2</a></li>
+                        <li class="page-item"><a class="page-link" href="#">3</a></li>
+                        <li class="page-item"><a class="page-link" href="#">4</a></li>
+                        <li class="page-item"><a class="page-link" href="#">5</a></li>
+                        <li class="page-item"><a class="page-link" href="#">Next</a></li>
+                    </ul>
+                </nav>
+
+
+                <div class="box text-center">
+                    <p>Did you find what you were looking for？</p>
+                    <a href="" class="btn btn-light">Yes</a>
+                    <a href="" class="btn btn-light">No</a>
+                </div>
+
+
+            </main> 
+
+        </div>
+
+    </div> 
+</section>
+
+<section class="padding-y-lg bg-light border-top">
+    <div class="container">
+
+        <p class="pb-2 text-center">Delivering the latest product trends and industry news straight to your inbox</p>
+
+        <div class="row justify-content-md-center">
+            <div class="col-lg-4 col-sm-6">
+                <form class="form-row">
+                    <div class="col-8">
+                        <input class="form-control" placeholder="Your Email" type="email">
+                    </div> 
+                    <div class="col-4">
+                        <button type="submit" class="btn btn-block btn-warning"> <i class="fa fa-envelope"></i> Subscribe </button>
+                    </div> 
+                </form>
+                <small class="form-text">We’ll never share your email address with a third-party. </small>
+            </div> 
+        </div>
+
+
+    </div>
+</section>
+
